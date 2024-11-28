@@ -13,5 +13,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://www.qooo.tech/sitemap.xml
-Sitemap: https://www.qooo.tech/baidusitemap.xml
+Sitemap: https://www.maruyamaya.cn/sitemap.xml
