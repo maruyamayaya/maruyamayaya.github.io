@@ -13,4 +13,4 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
-Sitemap: https://www.maruyamaya.cn/sitemap.xml
+Sitemap: https://maruyamaya.cn/sitemap.xml
