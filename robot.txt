@@ -5,6 +5,9 @@ Allow: /archives/
 Allow: /tags/
 Allow: /categories/
 Allow: /about/
+Allow: /bangumis/
+Allow: /post/
+Allow: /link/
 
 Disallow: /vendors/
 Disallow: /js/
