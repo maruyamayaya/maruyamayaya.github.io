@@ -1,0 +1,227 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>热力学与统计物理学习笔记(三) | Aya's Blog</title><meta name="author" content="上原彩"><meta name="copyright" content="上原彩"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="本文是《热力学与统计物理》第三章内容  3.0 热动平衡的条件 弛豫机理:  分子之间的碰撞 分子与器壁之间的作用  （1）力学平衡的描述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="热力学与统计物理学习笔记(三)">
+<meta property="og:url" content="https://maruyamaya.cn/post/retong3.html">
+<meta property="og:site_name" content="Aya&#39;s Blog">
+<meta property="og:description" content="本文是《热力学与统计物理》第三章内容  3.0 热动平衡的条件 弛豫机理:  分子之间的碰撞 分子与器壁之间的作用  （1）力学平衡的描述">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://maruyamaya.cn/images/mafuyu3.png">
+<meta property="article:published_time" content="2024-11-30T02:29:53.000Z">
+<meta property="article:modified_time" content="2024-11-30T05:09:41.450Z">
+<meta property="article:author" content="上原彩">
+<meta property="article:tag" content="热力学">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://maruyamaya.cn/images/mafuyu3.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "热力学与统计物理学习笔记(三)",
+  "url": "https://maruyamaya.cn/post/retong3.html",
+  "image": "https://maruyamaya.cn/images/mafuyu3.png",
+  "datePublished": "2024-11-30T02:29:53.000Z",
+  "dateModified": "2024-11-30T05:09:41.450Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "上原彩",
+      "url": "https://maruyamaya.cn/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/images/AyaMaruyama.png"><link rel="canonical" href="https://maruyamaya.cn/post/retong3.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta name="baidu-site-verification" content="codeva-K1GoJODuk5"/><meta name="msvalidate.01" content="8C12FFF408EFFE95A91E4A0F27E33523"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"已切换为繁体中文","cht_to_chs":"已切换为简体中文","day_to_night":"已切换为深色模式","night_to_day":"已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '热力学与统计物理学习笔记(三)',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/ld.css"><!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fa-solid fa-camera-retro"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/mafuyu3.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><img class="site-icon" src="/images/AyaWow.png" alt="Logo"><span class="site-name">Aya's Blog</span></a><a class="nav-page-title" href="/"><span class="site-name">热力学与统计物理学习笔记(三)</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fa-solid fa-camera-retro"></i><span> 追番</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">热力学与统计物理学习笔记(三)</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-11-30T02:29:53.000Z" title="发表于 2024-11-30 10:29:53">2024-11-30</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-11-30T05:09:41.450Z" title="更新于 2024-11-30 13:09:41">2024-11-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/">热力学与统计物理</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">总字数:</span><span class="word-count">54</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>本文是《热力学与统计物理》第三章内容</p>
+<h3 id="30-热动平衡的条件"><a class="markdownIt-Anchor" href="#30-热动平衡的条件"></a> 3.0 热动平衡的条件</h3>
+<p>弛豫机理:</p>
+<ul>
+<li>分子之间的碰撞</li>
+<li>分子与器壁之间的作用</li>
+</ul>
+<p>（1）力学平衡的描述</p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6/">热力学</a></div><div class="post-share"><div class="social-share" data-image="/images/mafuyu3.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/post/power-method.html" title="幂法计算矩阵的特征值与特征向量"><img class="cover" src="/images/yukina1.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">幂法计算矩阵的特征值与特征向量</div></div><div class="info-2"><div class="info-item-1">本文介绍一种简单有效的计算矩阵特征值与特征向量的近似值的方法——幂法。 主要参考《数值计算方法与算法》，《数值方法：设计、分析和算法实现 》  一、幂法基本方法 在实际问题中, 矩阵的按模最大特征值往往起更重要的作用. 例如: 矩阵的谱半径即矩阵的按模最大特征值的值, 决定了迭代矩阵是否收敛。因此, 矩阵的按模最大的特征值比其余的特征值的地位更加重要. 幂法是计算矩阵按模最大特征值及相应的特征向量的数值方法. 简单地说，任取初始向量 X(0)X^{(0)}X(0) ，进行迭代计算 X(k+1)=AX(k)X^{(k+1)}=A X^{(k)} X(k+1)=AX(k) 得到迭代序列 {X(k)}\left\{X^{(k)}\right\}{X(k)}, 分析 X(k+1)X^{(k+1)}X(k+1) 与 X(k)X^{(k)}X(k) 之间的关系, 得到 AAA 的按模最大特征值及特征向量的近似解. 在幂法中, 假设矩阵 AAA 有特征值 λi,i=1,2,⋯ ,n\lambda_i, i=1,2, \cdots, nλi​,i=1,2,⋯,n,...</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/post/retong2.html" title="热力学与统计物理学习笔记(二)"><img class="cover" src="/images/kanade3.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-26</div><div class="info-item-2">热力学与统计物理学习笔记(二)</div></div><div class="info-2"><div class="info-item-1">本文是《热力学与统计物理》第二章内容  2.1 内能、焓、自由能和吉布斯函数 2.2 麦氏关系的简单应用 2.3 气体的节流过程和绝热膨胀过程 2.4 基本热力学函数的确定 2.5 特性函数 2.6 热辐射的热力学理论 2.7 磁介质的热力学   二、均匀物质的热力学性质  2.1 内能、焓、自由能和吉布斯函数 （1）数学定义 函数 f=f(x,y)f=f(x, y)f=f(x,y) 的全微分 df=∂f∂x∣ydx+∂f∂y∣xdy=(∂f∂x)ydx+(∂f∂y)xdyd f=\left.\frac{\partial f}{\partial x}\right|_y d x+\left.\frac{\partial f}{\partial y}\right|_x d y=\left(\frac{\partial f}{\partial x}\right)_y d x+\left(\frac{\partial f}{\partial y}\right)_x d...</div></div></div></a><a class="pagination-related" href="/post/retong1.html" title="热力学与统计物理学习笔记(一)"><img class="cover" src="/images/mafuyu2.png" alt="cover"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2024-11-25</div><div class="info-item-2">热力学与统计物理学习笔记(一)</div></div><div class="info-2"><div class="info-item-1">临近期末，深知自己热统学的一坨，于是整理此笔记，顺便复习。 本系列全部内容基于汪志诚《热力学与统计物理》 本文是第一章内容  1.1 热力学系统的平衡状态及其描述 1.2 热平衡定律和温度 1.3 物态方程 1.4 功 1.5 热力学第一定律 1.6 热容量和焓 1.7 理想气体的内能 1.8 理想气体的绝热过程 1.9 理想气体的卡诺循环 1.10 热力学第二定律（过程的方向性） 1.11 卡诺定理 1.13 克劳修斯等式和不等式 1.14 熵和热力学基本方程 1.15 理想气体中的熵 1.16 热力学第二定律的数学表述 1.17 熵增加原理的简单应用 1.18 自由能和吉布斯函数   一、热力学的统计规律  1.1...</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/images/avatar.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">上原彩</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">10</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">11</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://space.bilibili.com/20518032"><i class="fa-solid fa-wifi"></i><span>本站丸山彩网络覆盖</span></a><div class="card-info-social-icons"><a class="social-icon" href="https://space.bilibili.com/20518032" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili" style="color: #24292e;"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=467911215" target="_blank" title="网易云"><i class="fa-solid fa-music" style="color: #24292e;"></i></a><a class="social-icon" href="https://weibo.com/u/5205026898" target="_blank" title="Weibo"><i class="fa-brands fa-weibo" style="color: #1f1e33;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Hello there! <br /> @<b>上原彩</b>  <br /> <a target="_blank" rel="noopener" href="https://space.bilibili.com/20518032" title="Bilibili --> 上原彩 ">Bilibili Channel</a></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#30-%E7%83%AD%E5%8A%A8%E5%B9%B3%E8%A1%A1%E7%9A%84%E6%9D%A1%E4%BB%B6"><span class="toc-text"> 3.0 热动平衡的条件</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/post/retong3.html" title="热力学与统计物理学习笔记(三)"><img src="/images/mafuyu3.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="热力学与统计物理学习笔记(三)"/></a><div class="content"><a class="title" href="/post/retong3.html" title="热力学与统计物理学习笔记(三)">热力学与统计物理学习笔记(三)</a><time datetime="2024-11-30T02:29:53.000Z" title="发表于 2024-11-30 10:29:53">2024-11-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/power-method.html" title="幂法计算矩阵的特征值与特征向量"><img src="/images/yukina1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="幂法计算矩阵的特征值与特征向量"/></a><div class="content"><a class="title" href="/post/power-method.html" title="幂法计算矩阵的特征值与特征向量">幂法计算矩阵的特征值与特征向量</a><time datetime="2024-11-29T12:26:00.000Z" title="发表于 2024-11-29 20:26:00">2024-11-29</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/post/associated-laguerre.html" title="连带拉盖尔方程的导出"><img src="/images/zhuzi1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="连带拉盖尔方程的导出"/></a><div class="content"><a class="title" href="/post/associated-laguerre.html" title="连带拉盖尔方程的导出">连带拉盖尔方程的导出</a><time datetime="2024-11-29T06:26:07.000Z" title="发表于 2024-11-29 14:26:07">2024-11-29</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url(/images/mafuyu3.png);"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 上原彩</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://space.bilibili.com/20518032" title="Bilibili --> 上原彩 ">Bilibili Channel</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="前往评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = null
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'MgOzoL7zXclBLrYIDngVOmhW-gzGzoHsz',
+      appKey: 'vHNjf9ACfV8sX9xfksh9WFgq',
+      avatar: 'hide',
+      serverURLs: '',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
