@@ -1,5 +1,24 @@
 /* #card-newest-comments img {border-radius: 10px; /* 设置最新评论圆角半径为10px，可以根据需要调整} */
+/*主页文章预览页面*/
+#recent-posts>.recent-post-item {
+        background: linear-gradient(-45deg, rgba(255, 255, 255, .7),
+                rgba(255, 255, 255, .8),
+                rgba(255, 255, 255, .8),
+                rgba(255, 255, 255, .7));
+        /* backdrop-filter: blur(10px); 应用高斯模糊效果，可以根据需要调整模糊程度 */
+         /* -webkit-backdrop-filter: blur(10px);兼容性前缀，适用于一些旧版本的浏览器 */
+    }
+    
+    [data-theme=dark] #recent-posts>.recent-post-item {
+        background: linear-gradient(-45deg, rgba(24, 40, 72, .7),
+                rgba(35, 37, 58, .8),
+                rgba(35, 37, 58, .8),
+                rgba(24, 40, 72, .7));
+        /* backdrop-filter: blur(10px); 应用高斯模糊效果，可以根据需要调整模糊程度 */
+         /* -webkit-backdrop-filter: blur(10px);兼容性前缀，适用于一些旧版本的浏览器 */
+    }
 
+    
 /* 说说轮播 */
 #bber-talk {
     background: linear-gradient(-45deg, rgba(255, 255, 255, .7),
@@ -43,8 +62,7 @@
 		rgba(255, 255, 255, 0.0),
 		rgba(255, 255, 255, 0.3),
 		rgba(255, 255, 255, 0.6),
-		rgba(255, 255, 255, 0.7)),
-		url('/config/img/dog.jpg'); /* 鼠标悬停时显示的背景图片 */
+		rgba(255, 255, 255, 0.7)); /* 鼠标悬停时显示的背景图片 */
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.5;
@@ -57,8 +75,7 @@
 		rgba(24, 40, 72, .1),
 		rgba(35, 37, 58, .3),
         rgba(35, 37, 58, .6),
-        rgba(24, 40, 72, .7)), 
-        url('/config/img/dog.jpg'); /* 鼠标悬停时显示的背景图片 */
+        rgba(24, 40, 72, .7)); /* 鼠标悬停时显示的背景图片 */
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -189,24 +206,6 @@
      /* -webkit-backdrop-filter: blur(10px);兼容性前缀，适用于一些旧版本的浏览器 */
 }
 
-/*主页文章预览页面*/
-#recent-posts>.recent-post-item {
-    background: linear-gradient(-45deg, rgba(255, 255, 255, .7),
-            rgba(255, 255, 255, .8),
-            rgba(255, 255, 255, .8),
-            rgba(255, 255, 255, .7));
-    /* backdrop-filter: blur(10px); 应用高斯模糊效果，可以根据需要调整模糊程度 */
-     /* -webkit-backdrop-filter: blur(10px);兼容性前缀，适用于一些旧版本的浏览器 */
-}
-
-[data-theme=dark] #recent-posts>.recent-post-item {
-    background: linear-gradient(-45deg, rgba(24, 40, 72, .7),
-            rgba(35, 37, 58, .8),
-            rgba(35, 37, 58, .8),
-            rgba(24, 40, 72, .7));
-    /* backdrop-filter: blur(10px); 应用高斯模糊效果，可以根据需要调整模糊程度 */
-     /* -webkit-backdrop-filter: blur(10px);兼容性前缀，适用于一些旧版本的浏览器 */
-}
 
 /*分类页面*/
 .layout>#page {

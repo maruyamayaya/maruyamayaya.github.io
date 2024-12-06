@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://maruyamaya.cn//post/power-method.html</loc>
-    <lastmod>2024-12-05</lastmod>
+    <loc>https://maruyamaya.cn//post/welcome.html</loc>
+    <lastmod>2024-12-06</lastmod>
   </url>
   <url>
     <loc>https://maruyamaya.cn//post/lammps-plumed.html</loc>
+    <lastmod>2024-12-05</lastmod>
+  </url>
+  <url>
+    <loc>https://maruyamaya.cn//post/power-method.html</loc>
     <lastmod>2024-12-05</lastmod>
   </url>
   <url>
@@ -35,10 +39,6 @@
   <url>
     <loc>https://maruyamaya.cn//post/hexo-math-renderer.html</loc>
     <lastmod>2024-11-27</lastmod>
-  </url>
-  <url>
-    <loc>https://maruyamaya.cn//post/welcome.html</loc>
-    <lastmod>2024-11-24</lastmod>
   </url>
   <url>
     <loc>https://maruyamaya.cn//post/lcknight.html</loc>
