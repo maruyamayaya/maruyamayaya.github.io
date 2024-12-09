@@ -996,7 +996,7 @@ img:not([src]) {
 blockquote {
   margin: 0 0 20px;
   padding: 7px 15px;
-  border-left: 4px solid #49b1f5;
+  border-left: 4px solid #428bca;
   background-color: var(--blockquote-bg);
   color: var(--blockquote-color);
   border-radius: 6px;
