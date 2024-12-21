@@ -1,3 +1,4 @@
+https://maruyamaya.cn/post/numerical-analysis.html
 https://maruyamaya.cn/post/reli-exercise.html
 https://maruyamaya.cn/post/retong5.html
 https://maruyamaya.cn/post/retong4.html
@@ -7,4 +8,3 @@ https://maruyamaya.cn/post/retong1.html
 https://maruyamaya.cn/post/welcome.html
 https://maruyamaya.cn/post/lammps-plumed.html
 https://maruyamaya.cn/post/power-method.html
-https://maruyamaya.cn/post/japan-tour.html
