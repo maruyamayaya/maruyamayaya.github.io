@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://maruyamaya.cn//post/japan-tour.html</loc>
+    <lastmod>2025-01-18</lastmod>
+  </url>
+  <url>
     <loc>https://maruyamaya.cn//post/retong2.html</loc>
     <lastmod>2024-12-28</lastmod>
   </url>
@@ -43,10 +47,6 @@
   <url>
     <loc>https://maruyamaya.cn//post/power-method.html</loc>
     <lastmod>2024-12-05</lastmod>
-  </url>
-  <url>
-    <loc>https://maruyamaya.cn//post/japan-tour.html</loc>
-    <lastmod>2024-12-04</lastmod>
   </url>
   <url>
     <loc>https://maruyamaya.cn//post/associated-laguerre.html</loc>
