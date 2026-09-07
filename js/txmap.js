@@ -1,3 +1,4 @@
+let ipLoacation;
 //get请求
 $.ajax({
     type: 'get',
@@ -9,6 +10,7 @@ $.ajax({
     dataType: 'jsonp',
     success: function (res) {
         ipLoacation = res;
+        showWelcome();
     }
 })
 function getDistance(e1, n1, e2, n2) {
@@ -28,6 +30,7 @@ function getDistance(e1, n1, e2, n2) {
 }
 
 function showWelcome() {
+    if (!ipLoacation || !ipLoacation.result || !ipLoacation.result.location || !ipLoacation.result.ad_info || !document.getElementById("welcome-info")) return;
 
     let dist = getDistance(103.7662335, 1.3191422, ipLoacation.result.location.lng, ipLoacation.result.location.lat); // 新加坡 Clementi Avenue 4 街道参考点：先经度，后纬度
     let pos = ipLoacation.result.ad_info.nation;
@@ -220,6 +223,6 @@ function showWelcome() {
         // console.log("Pjax无法获取#welcome-info元素🙄🙄🙄")
     }
 }
-window.onload = showWelcome;
+window.addEventListener('load', showWelcome);
 // 如果使用了pjax在加上下面这行代码
 document.addEventListener('pjax:complete', showWelcome);
