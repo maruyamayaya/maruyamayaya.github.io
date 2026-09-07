@@ -1,0 +1,50 @@
+#aside-content #card-music {
+  padding: 20px 12px 14px;
+  scroll-margin-top: 86px;
+}
+.music-card-heading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 8px 14px;
+  color: var(--reading-accent);
+}
+#music-card-title {
+  margin: 0;
+  color: var(--reading-text);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.music-platform {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--reading-muted);
+}
+.music-player-shell {
+  overflow: hidden;
+  border-radius: 8px;
+  background: #fff;
+}
+.music-player {
+  display: block;
+  width: 100%;
+  height: 86px;
+  border: 0;
+}
+#card-music .music-external-link {
+  display: block;
+  margin: 8px 8px 0;
+  color: var(--reading-accent);
+  font-size: 12px;
+  text-align: right;
+  line-height: 2;
+}
+/* Give the official medium player its minimum 280px content width. */
+@media (min-width: 901px) {
+  .home-page .layout:not(.hide-aside) #aside-content { width: 320px; flex-shrink: 0; }
+  .home-page .layout:not(.hide-aside) #recent-posts { flex: 1; min-width: 0; }
+}
+@media (max-width: 360px) {
+  #aside-content #card-music { padding-inline: 4px; }
+}

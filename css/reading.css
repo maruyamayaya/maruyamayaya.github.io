@@ -167,7 +167,7 @@
   animation: none !important;
 }
 .reading-page #pagination .content, .reading-page .relatedPosts .content { -webkit-line-clamp: 2; }
-#footer { background: #252532 !important; color: #e2dce6; }
+#footer { background: rgb(0 0 0 / 20%) !important; color: #e2dce6; }
 #footer::before { display: none; }
 #footer-wrap { padding: 44px 24px 24px; }
 #ft { max-width: 1120px; margin-bottom: 30px; }
