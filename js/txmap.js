@@ -29,7 +29,7 @@ function getDistance(e1, n1, e2, n2) {
 
 function showWelcome() {
 
-    let dist = getDistance(125, 44, ipLoacation.result.location.lng, ipLoacation.result.location.lat); //这里换成自己的经纬度
+    let dist = getDistance(103.7662335, 1.3191422, ipLoacation.result.location.lng, ipLoacation.result.location.lat); // 新加坡 Clementi Avenue 4 街道参考点：先经度，后纬度
     let pos = ipLoacation.result.ad_info.nation;
     let ip;
     let posdesc;
