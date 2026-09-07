@@ -17,4 +17,4 @@ Disallow: /vendors/
 Disallow: /fancybox/
 Disallow: /post/japan-tour.html
 
-Sitemap: https://maruyamaya.cn/sitemap.xml
+Sitemap: https://mizukioyasumi.com/sitemap.xml
