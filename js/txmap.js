@@ -1,18 +1,48 @@
 let ipLoacation;
-//get请求
-$.ajax({
-    type: 'get',
-    url: 'https://apis.map.qq.com/ws/location/v1/ip',
-    data: {
+
+// Load the existing Tencent JSONP endpoint without a jQuery dependency.
+(() => {
+    if (!document.getElementById('welcome-info')) return;
+
+    const callbackName = '__blogLocation_' + Date.now() + '_' + Math.random().toString(36).slice(2);
+    const script = document.createElement('script');
+    const params = new URLSearchParams({
         key: '2DZBZ-VUF6V-HIQP2-57QCS-ABEBK-5ZFQV',
         output: 'jsonp',
-    },
-    dataType: 'jsonp',
-    success: function (res) {
+        callback: callbackName,
+    });
+    let timer;
+    let settled = false;
+
+    const cleanup = timedOut => {
+        if (settled) return;
+        settled = true;
+        clearTimeout(timer);
+        script.onerror = null;
+        script.onload = null;
+        script.remove();
+        if (timedOut) {
+            // A removed script may still finish; briefly absorb a late JSONP response.
+            window[callbackName] = () => {};
+            setTimeout(() => { delete window[callbackName]; }, 60000);
+        } else {
+            delete window[callbackName];
+        }
+    };
+
+    window[callbackName] = res => {
+        cleanup(false);
         ipLoacation = res;
         showWelcome();
-    }
-})
+    };
+    script.async = true;
+    script.src = 'https://apis.map.qq.com/ws/location/v1/ip' + '?' + params.toString();
+    script.onerror = () => cleanup(false);
+    script.onload = () => cleanup(false);
+    timer = setTimeout(() => cleanup(true), 10000);
+    document.head.appendChild(script);
+})();
+
 function getDistance(e1, n1, e2, n2) {
     const R = 6371
     const { sin, cos, asin, PI, hypot } = Math
