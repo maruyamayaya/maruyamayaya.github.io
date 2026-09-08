@@ -1,91 +1,249 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/welcome.html</loc>
+    <loc>https://mizukioyasumi.com/post/welcome.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/spherical-laplace.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong5.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/retong5.html</loc>
+    <loc>https://mizukioyasumi.com/post/spherical-laplace.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/retong2.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong2.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/retong4.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong3.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/retong3.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong4.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/reli-exercise.html</loc>
+    <loc>https://mizukioyasumi.com/post/reli-exercise.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/retong1.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong1.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/power-method.html</loc>
+    <loc>https://mizukioyasumi.com/post/power-method.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/numerical-analysis.html</loc>
+    <loc>https://mizukioyasumi.com/post/numerical-analysis.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/modelling_nonequilibrium.html</loc>
+    <loc>https://mizukioyasumi.com/post/modelling_nonequilibrium.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/nanostructures.html</loc>
+    <loc>https://mizukioyasumi.com/post/nanostructures.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/mathematical_methods3.html</loc>
+    <loc>https://mizukioyasumi.com/post/mathematical_methods3.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/lammps-plumed.html</loc>
+    <loc>https://mizukioyasumi.com/post/lammps-plumed.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/lcknight.html</loc>
+    <loc>https://mizukioyasumi.com/post/lcknight.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/japan-tour.html</loc>
+    <loc>https://mizukioyasumi.com/post/hexo-math-renderer.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/hexo-math-renderer.html</loc>
+    <loc>https://mizukioyasumi.com/post/gaoshu.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/gaoshu.html</loc>
+    <loc>https://mizukioyasumi.com/post/associated-laguerre.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/associated-laguerre.html</loc>
+    <loc>https://mizukioyasumi.com/post/firstblog.html</loc>
+    
     <lastmod>2026-09-07</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/firstblog.html</loc>
-    <lastmod>2026-09-07</lastmod>
-  </url>
-  <url>
-    <loc>https://mizukioyasumi.com//post/phy_tech.html</loc>
+    <loc>https://mizukioyasumi.com/post/phy_tech.html</loc>
+    
     <lastmod>2026-09-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
+  
   <url>
-    <loc>https://mizukioyasumi.com//post/system_model.html</loc>
+    <loc>https://mizukioyasumi.com/post/system_model.html</loc>
+    
     <lastmod>2026-09-06</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
-</urlset> 
+  
+  <url>
+    <loc>https://mizukioyasumi.com/about/</loc>
+    
+    <lastmod>2024-11-29</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizukioyasumi.com/bangumis/</loc>
+    
+    <lastmod>2024-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizukioyasumi.com/link/</loc>
+    
+    <lastmod>2024-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizukioyasumi.com/tags/</loc>
+    
+    <lastmod>2024-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizukioyasumi.com/categories/</loc>
+    
+    <lastmod>2024-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  <url>
+    <loc>https://mizukioyasumi.com/</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+
+  
+</urlset>

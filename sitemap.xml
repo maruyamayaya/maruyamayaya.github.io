@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/spherical-laplace.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong5.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -20,7 +20,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/retong5.html</loc>
+    <loc>https://mizukioyasumi.com/post/spherical-laplace.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -38,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/retong4.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong3.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/retong3.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong4.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -137,15 +137,6 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/japan-tour.html</loc>
-    
-    <lastmod>2026-09-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mizukioyasumi.com/post/hexo-math-renderer.html</loc>
     
     <lastmod>2026-09-07</lastmod>
@@ -200,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/about/index.html</loc>
+    <loc>https://mizukioyasumi.com/about/</loc>
     
     <lastmod>2024-11-29</lastmod>
     
@@ -209,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/bangumis/index.html</loc>
+    <loc>https://mizukioyasumi.com/bangumis/</loc>
     
     <lastmod>2024-11-24</lastmod>
     
@@ -218,7 +209,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/link/index.html</loc>
+    <loc>https://mizukioyasumi.com/link/</loc>
     
     <lastmod>2024-11-24</lastmod>
     
@@ -227,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/tags/index.html</loc>
+    <loc>https://mizukioyasumi.com/tags/</loc>
     
     <lastmod>2024-11-24</lastmod>
     
@@ -236,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/categories/index.html</loc>
+    <loc>https://mizukioyasumi.com/categories/</loc>
     
     <lastmod>2024-11-24</lastmod>
     
@@ -253,216 +244,6 @@
   </url>
 
   
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E7%9F%A2%E9%87%8F%E5%88%86%E6%9E%90/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/Hexo/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E5%88%86%E5%AD%90%E5%8A%A8%E5%8A%9B%E5%AD%A6/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E5%A2%9E%E5%BC%BA%E9%87%87%E6%A0%B7/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/LAMMPS/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/PLUMED/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/Leetcode/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E6%97%85%E6%B8%B8/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E6%97%A5%E6%9C%AC/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/Mathematical-Methods/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/modelling/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/nanostructrues/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E6%8F%92%E5%80%BC/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/Python/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/technology/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/%E7%83%AD%E5%8A%9B%E5%AD%A6/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/tags/welcome/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
 
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/%E6%95%B0%E5%AD%A6%E7%89%A9%E7%90%86%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/Hexo/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/%E8%80%83%E7%A0%94/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/%E9%9A%8F%E5%86%99/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/%E6%97%85%E6%B8%B8/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/NUS-semester-1/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/%E6%95%B0%E5%80%BC%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/%E7%83%AD%E5%8A%9B%E5%AD%A6%E4%B8%8E%E7%BB%9F%E8%AE%A1%E7%89%A9%E7%90%86/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/categories/%E9%A6%96%E9%A1%B5/</loc>
-    <lastmod>2026-09-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
   
 </urlset>
