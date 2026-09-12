@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mizukioyasumi.com/photos/</loc>
+    
+    <lastmod>2026-09-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mizukioyasumi.com/post/nanostructures.html</loc>
     
     <lastmod>2026-09-08</lastmod>
@@ -20,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/retong5.html</loc>
+    <loc>https://mizukioyasumi.com/post/spherical-laplace.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -29,7 +38,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/spherical-laplace.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong5.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -110,43 +119,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/mathematical_methods3.html</loc>
-    
-    <lastmod>2026-09-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mizukioyasumi.com/post/lammps-plumed.html</loc>
-    
-    <lastmod>2026-09-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/post/lcknight.html</loc>
-    
-    <lastmod>2026-09-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/post/hexo-math-renderer.html</loc>
-    
-    <lastmod>2026-09-07</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/post/gaoshu.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -238,7 +211,7 @@
 
   <url>
     <loc>https://mizukioyasumi.com/</loc>
-    <lastmod>2026-09-08</lastmod>
+    <lastmod>2026-09-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
