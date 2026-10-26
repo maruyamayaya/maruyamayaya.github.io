@@ -91,7 +91,7 @@
     image.src = photo.full
     date.textContent = photo.dateLabel
     date.href = photo.url
-    counter.textContent = (current + 1) + ' / ' + selection.length
+    counter.textContent = '第 ' + (current + 1) + ' 张，共 ' + selection.length + ' 张'
     previous.disabled = selection.length < 2
     next.disabled = selection.length < 2
   }
