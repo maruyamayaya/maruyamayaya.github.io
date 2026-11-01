@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mizukioyasumi.com/post/welcome.html</loc>
+    
+    <lastmod>2026-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mizukioyasumi.com/bangumis/</loc>
     
     <lastmod>2026-11-01</lastmod>
@@ -47,24 +56,6 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/system_model-network-basics.html</loc>
-    
-    <lastmod>2026-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/post/system_model-network-models.html</loc>
-    
-    <lastmod>2026-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mizukioyasumi.com/post/system_model-helpsheet.html</loc>
     
     <lastmod>2026-10-26</lastmod>
@@ -83,6 +74,24 @@
   </url>
   
   <url>
+    <loc>https://mizukioyasumi.com/post/system_model-network-basics.html</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizukioyasumi.com/post/system_model-network-models.html</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mizukioyasumi.com/post/system_model-networkx.html</loc>
     
     <lastmod>2026-10-26</lastmod>
@@ -92,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/system_model-scale-free-distributions.html</loc>
+    <loc>https://mizukioyasumi.com/post/system_model.html</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -101,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/system_model.html</loc>
+    <loc>https://mizukioyasumi.com/post/system_model-scale-free-distributions.html</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -122,15 +131,6 @@
     <loc>https://mizukioyasumi.com/post/nanostructures.html</loc>
     
     <lastmod>2026-09-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/post/welcome.html</loc>
-    
-    <lastmod>2026-09-07</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -282,4 +282,51 @@
   
 
   
-</urlset>
+<url>
+    <loc>https://mizukioyasumi.com/en/about/</loc>
+    
+    <lastmod>2026-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://mizukioyasumi.com/en/bangumis/</loc>
+    
+    <lastmod>2026-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://mizukioyasumi.com/en/photos/</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://mizukioyasumi.com/en/link/</loc>
+    
+    <lastmod>2024-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://mizukioyasumi.com/en/tags/</loc>
+    
+    <lastmod>2024-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://mizukioyasumi.com/en/categories/</loc>
+    
+    <lastmod>2024-11-24</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url><url>
+    <loc>https://mizukioyasumi.com/en/</loc>
+    <lastmod>2026-11-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url></urlset>

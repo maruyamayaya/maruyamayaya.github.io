@@ -1,6 +1,10 @@
 (function () {
   'use strict';
 
+  function localize(chinese, english) {
+    return document.documentElement.lang.toLowerCase().startsWith('en') ? english : chinese;
+  }
+
   function initMusic() {
     var card = document.getElementById('card-music');
     if (!card || card.dataset.musicReady === 'true') return;
@@ -39,21 +43,21 @@
     function updatePlayback() {
       var playing = !audio.paused && !audio.ended;
       card.classList.toggle('is-playing', playing);
-      play.setAttribute('aria-label', playing ? '暂停音乐' : '播放音乐');
-      play.setAttribute('title', playing ? '暂停音乐' : '播放音乐');
+      play.setAttribute('aria-label', playing ? localize('暂停音乐', 'Pause music') : localize('播放音乐', 'Play music'));
+      play.setAttribute('title', playing ? localize('暂停音乐', 'Pause music') : localize('播放音乐', 'Play music'));
     }
 
     function updateVolume() {
       var muted = audio.muted || audio.volume === 0;
       card.classList.toggle('is-muted', muted);
-      mute.setAttribute('aria-label', muted ? '开启声音' : '静音');
-      mute.setAttribute('title', muted ? '开启声音' : '静音');
+      mute.setAttribute('aria-label', muted ? localize('开启声音', 'Unmute') : localize('静音', 'Mute'));
+      mute.setAttribute('title', muted ? localize('开启声音', 'Unmute') : localize('静音', 'Mute'));
       mute.setAttribute('aria-pressed', String(muted));
     }
 
     function showError() {
       playRequested = false;
-      status.textContent = '音频暂时无法播放，请再点播放重试。';
+      status.textContent = localize('音频暂时无法播放，请再点播放重试。', 'Audio is unavailable. Press play to try again.');
       updatePlayback();
     }
 
@@ -92,7 +96,7 @@
         audio.currentTime = Number(seek.value) / 1000 * audio.duration;
         updateTime();
       } catch (error) {
-        status.textContent = '暂时无法跳转，请稍后再试。';
+        status.textContent = localize('暂时无法跳转，请稍后再试。', 'Unable to seek right now. Please try again later.');
       }
     });
 
@@ -116,7 +120,7 @@
       updatePlayback();
     });
     audio.addEventListener('waiting', function () {
-      if (playRequested && !audio.paused) status.textContent = '正在加载音频…';
+      if (playRequested && !audio.paused) status.textContent = localize('正在加载音频…', 'Loading audio…');
     });
     audio.addEventListener('error', showError);
     audio.addEventListener('volumechange', updateVolume);

@@ -1,6 +1,5 @@
 (() => {
-  const awayTitle = '👀跑哪里去了~';
-  const returnTitle = '(*´∀ ˋ*) 抓到你啦～';
+  const isEnglish = () => document.documentElement.lang.toLowerCase().startsWith('en');
   let originalTitle = document.title;
   let restoreTimer = null;
   let hasBeenVisible = !document.hidden;
@@ -20,9 +19,9 @@
       if (!hasBeenVisible) return;
       if (!showingHint) originalTitle = document.title;
       showingHint = true;
-      document.title = awayTitle;
+      document.title = isEnglish() ? '👀 Where did you go?~' : '👀跑哪里去了~';
     } else if (showingHint) {
-      document.title = returnTitle;
+      document.title = isEnglish() ? '(*´∀ ˋ*) Caught you!~' : '(*´∀ ˋ*) 抓到你啦～';
       restoreTimer = setTimeout(() => {
         restoreTimer = null;
         if (!document.hidden) {

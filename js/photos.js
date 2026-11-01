@@ -1,5 +1,6 @@
 (function () {
   'use strict'
+  const isEnglish = () => document.documentElement.lang.toLowerCase().startsWith('en')
   const wall = document.getElementById('photo-wall')
   const dialog = document.getElementById('photo-dialog')
   if (!wall || !dialog || wall.dataset.ready) return
@@ -40,7 +41,9 @@
       if (match) visible++
     })
     yearButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.year === year)))
-    results.textContent = visible + ' 个相册'
+    results.textContent = isEnglish()
+      ? visible + (visible === 1 ? ' album' : ' albums')
+      : visible + ' 个相册'
     empty.hidden = visible > 0
   }
   yearButtons.forEach(button => button.addEventListener('click', () => {
@@ -91,7 +94,9 @@
     image.src = photo.full
     date.textContent = photo.dateLabel
     date.href = photo.url
-    counter.textContent = '第 ' + (current + 1) + ' 张，共 ' + selection.length + ' 张'
+    counter.textContent = isEnglish()
+      ? 'Photo ' + (current + 1) + ' of ' + selection.length
+      : '第 ' + (current + 1) + ' 张，共 ' + selection.length + ' 张'
     previous.disabled = selection.length < 2
     next.disabled = selection.length < 2
   }

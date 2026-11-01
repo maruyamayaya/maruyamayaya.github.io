@@ -54,9 +54,14 @@
     };
 
     const update = () => {
+      const isEnglish = document.documentElement.lang.toLowerCase().startsWith('en');
       button.setAttribute('aria-pressed', String(enabled));
-      button.setAttribute('aria-label', enabled ? '关闭首页雪花' : '开启首页雪花');
-      button.title = enabled ? '关闭雪花' : '开启雪花';
+      button.setAttribute('aria-label', isEnglish
+        ? (enabled ? 'Turn off homepage snow' : 'Turn on homepage snow')
+        : (enabled ? '关闭首页雪花' : '开启首页雪花'));
+      button.title = isEnglish
+        ? (enabled ? 'Turn off snow' : 'Turn on snow')
+        : (enabled ? '关闭雪花' : '开启雪花');
       canvas.hidden = !enabled;
       if (enabled && visible && !document.hidden) {
         if (!frame) frame = requestAnimationFrame(draw);

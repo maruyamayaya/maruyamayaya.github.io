@@ -1,0 +1,388 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Complex Systems Analysis and Modelling | Aya's Blog</title><meta name="author" content="Aya Uehara"><meta name="copyright" content="Aya Uehara"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#fffdfb"><meta name="description" content="Interactions and emergence in complex systems, with a series on the central limit theorem, power laws, network models, metrics, and NetworkX.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Complex Systems Analysis and Modelling">
+<meta property="og:url" content="https://mizukioyasumi.com/post/system_model.html">
+<meta property="og:site_name" content="Aya&#39;s Blog">
+<meta property="og:description" content="Interactions and emergence in complex systems, with a series on the central limit theorem, power laws, network models, metrics, and NetworkX.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mizukioyasumi.com/images/mafuyu8.png">
+<meta property="article:published_time" content="2026-08-11T11:56:03.000Z">
+<meta property="article:modified_time" content="2026-10-26T10:51:48.000Z">
+<meta property="article:author" content="Aya Uehara">
+<meta property="article:tag" content="Modelling">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mizukioyasumi.com/images/mafuyu8.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Complex Systems Analysis and Modelling",
+  "url": "https://mizukioyasumi.com/post/system_model.html",
+  "image": "https://mizukioyasumi.com/images/mafuyu8.png",
+  "datePublished": "2026-08-11T11:56:03.000Z",
+  "dateModified": "2026-10-26T10:51:48.000Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Aya Uehara",
+      "url": "https://mizukioyasumi.com/en/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/images/AyaMaruyama.png"><link rel="canonical" href="https://mizukioyasumi.com/post/system_model.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><meta name="google-site-verification" content="8asbFJaCWza0k3wiG4In8ECU4Oa5JKA689QaT3FUGfo"/><meta name="baidu-site-verification" content="codeva-K1GoJODuk5"/><meta name="msvalidate.01" content="8C12FFF408EFFE95A91E4A0F27E33523"/><link rel="stylesheet" href="/en/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#222532')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fffdfb')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/en/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":true},
+  copy: {
+    success: 'Copy Successful',
+    error: 'Copy Failed',
+    noSupport: 'Browser Not Supported'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: 'Just now',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: {"chs_to_cht":"You have switched to Traditional Chinese","cht_to_chs":"You have switched to Simplified Chinese","day_to_night":"You have switched to Dark Mode","night_to_day":"You have switched to Light Mode","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: 'Load More'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Complex Systems Analysis and Modelling',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  isShuoshuo: false
+}</script><link rel="stylesheet" href="/css/style2.css"><link rel="stylesheet" href="/css/custom.css"><link rel="stylesheet" href="/css/reading.css?v=20260907b"><link rel="stylesheet" href="/css/language.css?v=20261101"><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/assets/font-awesome-animation.min.css" media="defer" onload="this.media='all'"><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-tag-plugins-plus@latest/lib/tag_plugins.css" media="defer" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<link rel="preload" as="image" href="/images/optimized/mafuyu4-18cd638bb666-1920.webp" fetchpriority="high"></head><body class="reading-page"><div id="web_bg" style="background-image: url(/images/optimized/mafuyu4-18cd638bb666-1920.webp);"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/images/optimized/avatar-9f1402dea4d6-192.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar" loading="lazy" decoding="async" srcset="/images/optimized/avatar-9f1402dea4d6-96.webp 96w, /images/optimized/avatar-9f1402dea4d6-192.webp 192w, /images/optimized/avatar-9f1402dea4d6-384.webp 384w" sizes="110px" width="1034" height="1000"></div><div class="site-data text-center"><a href="/en/archives/"><div class="headline">Articles</div><div class="length-num">24</div></a><a href="/en/tags/"><div class="headline">Tags</div><div class="length-num">14</div></a><a href="/en/categories/"><div class="headline">Categories</div><div class="length-num">6</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/en/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> Home</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/en/bangumis/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fanju"></use></svg><span> Anime</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/en/photos/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-photo-album"></use></svg><span> Photos</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/en/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-mianxingshijianzhou"></use></svg><span> Archives</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-wenzhang"></use></svg><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/en/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-a-addtag">                   </use></svg><span> Tags</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/en/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xiuxian"></use></svg><span> Personal</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/en/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youlian">                   </use></svg><span> Links</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/en/about/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-aixin">                   </use></svg><span> About</span></a></li></ul></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(/images/mafuyu8.png);"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/en/"><img class="site-icon" src="/images/AyaWow.png" alt="Logo" loading="eager" decoding="async"><span class="site-name">Aya's Blog</span></a><a class="nav-page-title" href="/en/"><span class="site-name">Complex Systems Analysis and Modelling</span></a></span><div id="menus"><a class="language-switch" href="/post/system_model.html" lang="zh-CN" hreflang="zh-CN" aria-label="切换到中文"><i class="fas fa-globe" aria-hidden="true"></i><span>中文</span></a><div class="menus_items"><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/en/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-home"></use></svg><span> Home</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/en/bangumis/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fanju"></use></svg><span> Anime</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/en/photos/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-photo-album"></use></svg><span> Photos</span></a></div><div class="menus_item"><a class="site-page faa-parent animated-hover" href="/en/archives/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-mianxingshijianzhou"></use></svg><span> Archives</span></a></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-wenzhang"></use></svg><span> Posts</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/en/tags/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-a-addtag">                   </use></svg><span> Tags</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/en/categories/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-fenlei">                   </use></svg><span> Categories</span></a></li></ul></div><div class="menus_item"><a class="site-page group faa-parent animated-hover hide" href="javascript:void(0);"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-xiuxian"></use></svg><span> Personal</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child faa-parent animated-hover" href="/en/link/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-youlian">                   </use></svg><span> Links</span></a></li><li><a class="site-page child faa-parent animated-hover" href="/en/about/"><svg class="icon faa-tada" aria-hidden="true"><use xlink:href="#icon-aixin">                   </use></svg><span> About</span></a></li></ul></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><div id="post-info"><h1 class="post-title">Complex Systems Analysis and Modelling</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2026-08-11T11:56:03.000Z" title="Created 2026-08-11 19:56:03">2026-08-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2026-10-26T10:51:48.000Z" title="Updated 2026-10-26 18:51:48">2026-10-26</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/en/categories/NUS-semester-1/">NUS Semester 1</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">Word Count:</span><span class="word-count">1.2k</span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><p>Complex systems connect microscopic interactions to macroscopic patterns. Probability distributions describe fluctuations and extreme events, network models explain how connections form, and graph metrics quantify the resulting structure. The key tools are the central limit theorem, stable distributions, power laws, preferential attachment, and network algorithms.</p>
+<span id="more"></span>
+<style>
+#article-container .katex-block {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.2em 0;
+}
+#article-container .katex-block .katex-display {
+  min-width: max-content;
+}
+</style>
+<p><strong>A formula is only useful with its conditions:</strong> identify the random variable, graph type, and normalization convention before substituting numbers.</p>
+<p>On smaller screens, wide equations and tables can be scrolled horizontally.</p>
+<p><strong>Topics</strong></p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Key concepts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#introduction">Introduction</a></td>
+<td>Interactions, emergence, and modelling approaches</td>
+</tr>
+<tr>
+<td><span id="central-limit-theorem"></span><span id="the-central-limit-theorem-why-sums-of-many-random-contributions-are-approximately-normal"></span><span id="distinguishing-random-variables-distributions-and-moments"></span><span id="mean-variance-and-raw-moments"></span><span id="general-and-standard-normal-distributions"></span><span id="the-precise-clt-statement-and-its-assumptions"></span><span id="why-standardization-uses-the-square-root-of-n"></span><span id="why-the-clt-is-useful-and-why-its-assumptions-matter"></span><span id="moment-generating-functions-encoding-moments-in-one-function"></span><span id="generating-moments-by-differentiating-at-zero"></span><span id="translation-scaling-and-independent-sums"></span><span id="the-standard-normal-mgf-complete-the-square"></span><span id="distinguishing-raw-moments-skewness-and-kurtosis"></span><span id="the-mgf-proof-of-the-clt-where-each-assumption-is-used"></span><span id="step-1-turn-the-exponential-of-a-sum-into-a-product"></span><span id="step-2-factor-the-expectation-by-independence-then-use-identical-distributions"></span><span id="step-3-use-a-second-order-taylor-expansion-at-zero"></span><span id="step-4-take-the-limit"></span><span id="step-5-restore-a-general-mean-and-variance"></span><span id="why-the-finite-variance-clt-is-more-general-than-this-proof"></span><span id="random-walks-from-one-step-to-the-endpoint-distribution"></span><span id="the-distribution-and-moments-of-one-step"></span><span id="the-exact-distribution-after-n-steps"></span><span id="simulating-the-random-walk-and-interpreting-the-results"></span><a href="/en/post/system_model-clt.html#central-limit-theorem">Central limit theorem</a></td>
+<td>Probability and moments, MGFs, proof, and random walks</td>
+</tr>
+<tr>
+<td><span id="scale-free-distributions"></span><span id="scale-free-distributions-stability-power-laws-and-extreme-events"></span><span id="stable-distributions-and-domains-of-attraction-what-survives-addition"></span><span id="stability-of-the-normal-distribution"></span><span id="self-similarity-must-include-density-normalization"></span><span id="why-do-domains-of-attraction-matter"></span><span id="how-can-the-assumptions-of-the-central-limit-theorem-be-relaxed"></span><span id="nonidentical-distributions-the-lyapunov-clt"></span><span id="example-independent-bernoulli-variables-with-different-parameters"></span><span id="weak-dependence-the-coarse-graining-intuition"></span><span id="infinite-mean-or-variance"></span><span id="cauchy-lorentz-averaging-more-does-not-always-improve-accuracy"></span><span id="why-does-the-cauchy-mean-not-exist"></span><span id="why-switch-to-the-characteristic-function"></span><span id="the-key-calculation-for-independent-sums"></span><span id="lévy-stable-distributions-the-generalized-clt-and-scaling-exponents"></span><span id="power-law-tails-and-moments"></span><span id="the-generalized-central-limit-theorem"></span><span id="stable-distributions-and-other-distribution-families"></span><span id="calculating-with-power-laws-exponents-tail-probabilities-and-moments"></span><span id="what-does-scale-free-mean"></span><span id="from-the-density-to-the-complementary-cdf"></span><span id="one-integral-gives-the-moment-condition"></span><span id="finite-system-cutoffs"></span><span id="pareto-wealth-distributions-and-microscopic-exchange-models"></span><span id="the-gini-coefficient-and-lorenz-curve"></span><span id="worked-example-a-pareto-distribution-with-alpha15"></span><span id="why-consider-an-agent-based-model"></span><span id="earthquakes-and-aftershocks-identify-the-variable-before-calling-it-a-power-law"></span><span id="the-gutenbergrichter-law"></span><span id="omoris-law-for-aftershocks"></span><span id="consequences-of-having-no-characteristic-scale"></span><a href="/en/post/system_model-scale-free-distributions.html#scale-free-distributions">Scale-free distributions</a></td>
+<td>Stable distributions, Cauchy, power laws, Pareto, earthquakes, and extreme events</td>
+</tr>
+<tr>
+<td><span id="scale-free-networks"></span><span id="scale-free-networks-and-preferential-attachment-deriving-the-distribution-from-the-mechanism"></span><span id="what-does-a-network-represent-and-what-does-scale-free-mean"></span><span id="degree-and-the-degree-distribution"></span><span id="what-the-exponent-means"></span><span id="counting-nodes-and-edges"></span><span id="the-ba-model-growth-and-preferential-attachment"></span><span id="continuous-approximation-a-complete-derivation-of-exponent-3"></span><span id="step-1-write-the-expected-growth-rate"></span><span id="step-2-separate-variables-and-apply-the-initial-condition"></span><span id="step-3-obtain-the-cdf-and-ccdf-from-birth-times"></span><span id="step-4-differentiate"></span><span id="the-master-equation-discrete-degrees-and-the-birth-boundary-condition"></span><span id="counting-nodes-makes-the-birth-term-explicit"></span><span id="the-boundary-at-km-and-the-recurrence-for-km"></span><span id="normalization-checks-and-the-discrete-tail-probability"></span><span id="testing-the-mechanism-and-comparing-with-erdősrényi-networks"></span><span id="why-are-both-mechanisms-needed"></span><span id="definition-of-the-er-model"></span><span id="the-poisson-limit-for-a-large-sparse-network"></span><span id="the-main-differences-between-er-and-ba"></span><a href="/en/post/system_model-network-models.html#scale-free-networks">Scale-free networks</a></td>
+<td>BA continuum derivation, discrete master equation, ER model, and Poisson limit</td>
+</tr>
+<tr>
+<td><span id="network-basics"></span><span id="network-basics-representations-graph-types-connectivity-and-matrix-calculations"></span><span id="basic-terminology-and-two-graph-representations"></span><span id="adjacency-matrices-and-adjacency-lists"></span><span id="walks-paths-cycles-and-subgraphs"></span><span id="multiple-components-and-block-matrices"></span><span id="worked-example-a-six-node-undirected-graph"></span><span id="1-adjacency-matrix-and-adjacency-lists"></span><span id="2-node-degrees"></span><span id="3-classifying-paths-and-cycles"></span><span id="4-all-connected-three-node-subgraphs"></span><span id="5-delete-nodes-3-and-4-simultaneously"></span><span id="graph-types-tests-and-real-world-examples"></span><span id="complete-graphs"></span><span id="regular-graphs"></span><span id="bipartite-graphs"></span><span id="trees-and-forests"></span><span id="planar-graphs"></span><span id="multilayer-networks"></span><span id="multiplex-networks"></span><span id="identifying-a-graph-type-from-its-meaning"></span><span id="bipartite-matrices-and-projections-a-worked-example"></span><span id="specifying-the-bipartite-graph"></span><span id="projection-onto-abcd"></span><span id="projection-onto-1ldots7"></span><span id="directed-and-weighted-networks-and-directed-components"></span><span id="directed-adjacency-matrices"></span><span id="weighted-adjacency-matrices"></span><span id="strong-and-weak-connectivity"></span><span id="a-nodes-in-component-and-out-component"></span><span id="example-distinguishing-the-four-concepts"></span><span id="degrees-and-two-step-neighbors-a-worked-example"></span><span id="why-compute-a2"></span><span id="extracting-neighbors-at-exactly-distance-two"></span><span id="two-checks-for-undirected-graphs"></span><span id="hypergraphs-sparsity-and-computational-representations"></span><span id="hypergraphs-represent-group-relations"></span><span id="density-and-mean-degree"></span><span id="sparsity-as-a-scaling-property"></span><span id="the-cost-of-adjacency-matrices-and-lists"></span><a href="/en/post/system_model-network-basics.html#network-basics">Network fundamentals</a></td>
+<td>Graph types, matrices, projections, and connectivity</td>
+</tr>
+<tr>
+<td><span id="network-metrics"></span><span id="network-metrics-and-algorithms"></span><span id="distance-eccentricity-diameter-and-radius"></span><span id="degree-closeness-and-betweenness-different-meanings-of-importance"></span><span id="eigenvector-centrality-and-katz-centrality"></span><span id="pagerank-probability-flow-with-random-teleportation"></span><span id="cores-local-clustering-and-global-transitivity"></span><span id="assortativity-communities-and-modularity"></span><span id="giant-components-small-worlds-and-reading-empirical-network-tables"></span><span id="bfs-and-computational-complexity-state-the-representation"></span><span id="worked-example-a-triangle-with-one-leaf"></span><a href="/en/post/system_model-network-metrics.html#network-metrics">Network metrics and algorithms</a></td>
+<td>Centrality, PageRank, clustering, communities, and complexity</td>
+</tr>
+<tr>
+<td><span id="networkx-code"></span><span id="working-with-networkx-and-reading-code"></span><span id="dictionaries-graph-types-and-adding-nodes-and-edges"></span><span id="inspection-attributes-and-deletion"></span><span id="graph-generators-drawing-and-randomness"></span><span id="functions-and-preconditions"></span><span id="a-complete-reproducible-check"></span><a href="/en/post/system_model-networkx.html#networkx-code">Working with NetworkX</a></td>
+<td>Graph construction, attributes, function selection, and reproducible examples</td>
+</tr>
+<tr>
+<td><span id="helpsheet"></span><span id="helpsheet-six-core-formula-blocks"></span><span id="1-probability-the-clt-and-mgfs"></span><span id="2-stable-distributions-power-laws-and-pareto"></span><span id="3-relaxing-the-clt-and-application-reminders"></span><span id="4-ba-and-er-networks"></span><span id="5-graph-theory-matrices-and-components"></span><span id="6-network-metrics"></span><a href="/en/post/system_model-helpsheet.html#helpsheet">Helpsheet</a></td>
+<td>Six groups of core formulas and conditions</td>
+</tr>
+</tbody>
+</table>
+<p><a id="notation"></a></p>
+<p><strong>Notation</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning and possible ambiguity</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>S</mi><mi>n</mi></msub><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><msub><mi>X</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">S_n=\sum_{i=1}^{n}X_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.104002em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.07847em;">X</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mover accent="true"><mi>X</mi><mo>ˉ</mo></mover><mi>n</mi></msub><mo>=</mo><msub><mi>S</mi><mi>n</mi></msub><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">\bar X_n=S_n/n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.9701099999999999em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord accent"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8201099999999999em;"><span style="top:-3em;"><span class="pstrut" style="height:3em;"></span><span class="mord mathnormal" style="margin-right:0.07847em;">X</span></span><span style="top:-3.25233em;"><span class="pstrut" style="height:3em;"></span><span class="accent-body" style="left:-0.16666em;"><span class="mord">ˉ</span></span></span></span></span></span></span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.07847em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.05764em;">S</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.151392em;"><span style="top:-2.5500000000000003em;margin-left:-0.05764em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mord">/</span><span class="mord mathnormal">n</span></span></span></span></td>
+<td>Sum of random variables and sample mean</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>μ</mi></mrow><annotation encoding="application/x-tex">\mu</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal">μ</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msup><mi>σ</mi><mn>2</mn></msup></mrow><annotation encoding="application/x-tex">\sigma^2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span></span></span></span></td>
+<td>Population mean and variance; the second parameter in <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>N</mi><mo stretchy="false">(</mo><mi>μ</mi><mo separator="true">,</mo><msup><mi>σ</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">N(\mu,\sigma^2)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">N</span><span class="mopen">(</span><span class="mord mathnormal">μ</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.03588em;">σ</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span> is the variance</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>X</mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">M_X(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07847em;">X</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>φ</mi><mi>X</mi></msub><mo stretchy="false">(</mo><mi>q</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">\varphi_X(q)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal">φ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07847em;">X</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal" style="margin-right:0.03588em;">q</span><span class="mclose">)</span></span></span></span></td>
+<td>Moment-generating function (MGF) and characteristic function (CF)</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi></mrow><annotation encoding="application/x-tex">\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span></td>
+<td>Power-law PDF and CCDF exponents satisfy <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi><mo>=</mo><mn>1</mn><mo>+</mo><mi>α</mi></mrow><annotation encoding="application/x-tex">\gamma=1+\alpha</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span></span></span></span>; the stable-family parameter <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>2</mn></mrow><annotation encoding="application/x-tex">\alpha=2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">2</span></span></span></span> is the Gaussian exception. Some stable-distribution formulas instead use <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>γ</mi></mrow><annotation encoding="application/x-tex">\gamma</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05556em;">γ</span></span></span></span> for a positive scale parameter, as defined locally</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">n</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">m</span></span></span></span></td>
+<td>Number of nodes, total number of edges, and edges introduced by each new BA node; distinguish the edge count <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi></mrow><annotation encoding="application/x-tex">M</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathnormal" style="margin-right:0.10903em;">M</span></span></span></span> from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>M</mi><mi>X</mi></msub><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">M_X(t)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord mathnormal" style="margin-right:0.10903em;">M</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:-0.10903em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.07847em;">X</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mopen">(</span><span class="mord mathnormal">t</span><span class="mclose">)</span></span></span></span> by context</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>A</mi><mrow><mi>i</mi><mi>j</mi></mrow></msub></mrow><annotation encoding="application/x-tex">A_{ij}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.969438em;vertical-align:-0.286108em;"></span><span class="mord"><span class="mord mathnormal">A</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.311664em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mord mathnormal mtight" style="margin-right:0.05724em;">j</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span></span></span></span></td>
+<td>A directed edge from <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>i</mi></mrow><annotation encoding="application/x-tex">i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.65952em;vertical-align:0em;"></span><span class="mord mathnormal">i</span></span></span></span> to <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>j</mi></mrow><annotation encoding="application/x-tex">j</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord mathnormal" style="margin-right:0.05724em;">j</span></span></span></span>: row sums give out-degrees and column sums give in-degrees</td>
+</tr>
+<tr>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">p(x)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathnormal">p</span><span class="mopen">(</span><span class="mord mathnormal">x</span><span class="mclose">)</span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>p</mi><mi>k</mi></msub></mrow><annotation encoding="application/x-tex">p_k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathnormal">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.33610799999999996em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathnormal mtight" style="margin-right:0.03148em;">k</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>, <span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="bold-italic">p</mi></mrow><annotation encoding="application/x-tex">\boldsymbol p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.63888em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord boldsymbol">p</span></span></span></span></span></td>
+<td>A continuous density, a discrete degree probability, and a PageRank probability vector, respectively</td>
+</tr>
+</tbody>
+</table>
+<!-- system-model-section:begin introduction -->
+<p><a id="introduction"></a></p>
+<h2 id="introduction-why-study-complex-systems"><a class="markdownIt-Anchor" href="#introduction-why-study-complex-systems"></a> Introduction: Why Study Complex Systems?</h2>
+<h3 id="from-individuals-to-the-whole-where-complexity-arises"><a class="markdownIt-Anchor" href="#from-individuals-to-the-whole-where-complexity-arises"></a> From Individuals to the Whole: Where Complexity Arises</h3>
+<p>The defining feature of a complex system is more than a large number of parts: interactions among many individuals produce structures and behaviors that an isolated individual does not possess. Four useful characteristics are <strong>many-body, autonomous, interaction, and emergence</strong>. These refer to many constituent units, decentralized autonomous activity, interactions that often involve nonlinear effects, and the resulting patterns or collective behavior. They provide a framework for recognizing complex systems rather than mathematical axioms that every such system must satisfy exactly.</p>
+<p>Autonomy means that overall order need not be designed step by step by a central controller. Emergence means that new observable regularities appear at the collective level; knowing the properties of an individual constituent is not enough to read off the behavior of the whole.</p>
+<table>
+<thead>
+<tr>
+<th>Example</th>
+<th>Local mechanism or individual level</th>
+<th>Collective phenomenon illustrated</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Army ants and ant rafts</td>
+<td>Individuals coordinate through local information, including contact with nearby individuals</td>
+<td>Self-organization, resource efficiency, and collective capabilities</td>
+</tr>
+<tr>
+<td>Bird flocks</td>
+<td>Individuals adjust their motion and influence one another</td>
+<td>Large-scale synchronization and collective behavior</td>
+</tr>
+<tr>
+<td>Fireflies and applause</td>
+<td>Individual oscillations or rhythms are influenced by others</td>
+<td>Spontaneous synchronization and pattern formation</td>
+</tr>
+<tr>
+<td>Stadium waves</td>
+<td>Responses to nearby participants and the number of people participating</td>
+<td>A critical number of participants and a collective response resembling a phase transition</td>
+</tr>
+<tr>
+<td>Traffic, cities, and epidemics</td>
+<td>Networks of people, roads, contacts, and feedback</td>
+<td>Congestion, spatial organization, and spreading</td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-uses-and-limits-of-reductionism"><a class="markdownIt-Anchor" href="#the-uses-and-limits-of-reductionism"></a> The Uses and Limits of Reductionism</h3>
+<p>Reductionism seeks to understand the whole through its components and their interactions. It provides a starting point for microscopic models. Complex systems, however, involve correlations, feedback, and behavior across scales, so simply adding the results for isolated individuals linearly does not explain the whole.</p>
+<p>For example, knowing how a single bird flies does not directly predict how a flock turns; we must also specify how each bird responds to other birds. Physical approaches seek common regularities across systems whose details differ, a property known as universality. This usually requires translating the question into measurable macroscopic quantities, such as distribution tails, the degree of synchronization, network connectivity, or clustering.</p>
+<p><strong>How to structure a short answer:</strong> Identify the individuals, explain their interactions, identify the collective phenomenon, and explain why the properties of an isolated individual are insufficient to determine that phenomenon. Saying only that “the system is large and complicated” is not enough.</p>
+<h3 id="modelling-tools-and-their-connections"><a class="markdownIt-Anchor" href="#modelling-tools-and-their-connections"></a> Modelling Tools and Their Connections</h3>
+<ul>
+<li>
+<p><strong>Agent-based models:</strong> Specify individual states and rules for actions or interactions, then observe the aggregate behavior. A <strong>cellular automaton</strong> usually places states on discrete lattice sites and updates them according to neighborhood rules.</p>
+</li>
+<li>
+<p><strong>Complex networks:</strong> Represent individuals as nodes and interactions as edges. Distributions describe what the data look like, while networks express who interacts with whom. The same local rules can produce different macroscopic outcomes on different connection structures.</p>
+</li>
+<li>
+<p><strong>Nonlinear dynamics and chaos:</strong> Nonlinearity allows a response to be disproportionate to its input. Chaos concerns motion in deterministic systems that is highly sensitive to initial conditions. Complex systems may be ordered or chaotic; “complex” does not mean “random” or “chaotic.”</p>
+</li>
+<li>
+<p><strong>Disorder, heterogeneity, and pattern formation:</strong> Real systems differ in their connections, individual properties, or coupling strengths. The question is how these differences affect the emergence of order.</p>
+</li>
+<li>
+<p><strong>Phase transitions and criticality:</strong> Changing a control parameter can qualitatively change a system’s macroscopic behavior. Statistical physics provides tools for studying macroscopic phases through microscopic interactions; complex-systems research extends such methods to irregular, heterogeneous structures.</p>
+</li>
+<li>
+<p><strong>Self-organized criticality (SOC):</strong> Some driven systems may approach a critical state through their own dynamics. A sandpile provides an intuitive example. Observing a power law does not by itself prove that a system exhibits SOC.</p>
+</li>
+<li>
+<p><strong>Power laws, heavy tails, and scale-free behavior:</strong> Large events can be more common than a normal model predicts, suggesting that the assumptions behind a normal approximation may fail. A power law is a testable statistical regularity; it does not automatically identify a unique microscopic mechanism.</p>
+</li>
+</ul>
+<h3 id="a-unifying-line-of-reasoning"><a class="markdownIt-Anchor" href="#a-unifying-line-of-reasoning"></a> A Unifying Line of Reasoning</h3>
+<p>If many contributions can reasonably be treated as an additive combination of independent, identically distributed variables with finite variance, the CLT supplies a normal baseline prediction. When data depart substantially from that prediction, examine independence, the finiteness of the variance, whether the variable is actually a sum, and whether sampling mixes different mechanisms. Stable distributions and power laws offer another possible class of statistical structures, while growth and preferential attachment provide a specific mechanism that can generate a power law in a network. Network metrics then turn a complicated connection pattern into quantities that can be calculated and compared.</p>
+<!-- system-model-section:end introduction -->
+<hr>
+<p><a href="/en/post/system_model-clt.html">Central limit theorem →</a></p>
+</article><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/en/tags/modelling/">Modelling</a></div><div class="post-share"><div class="social-share" data-image="/images/mafuyu8.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related" href="/en/post/system_model-network-models.html" title="Network Models: Preferential Attachment, BA, and Erdős–Rényi"><img class="cover" src="/images/optimized/mafuyu8-bda54b31cbdd-480.webp" onerror="onerror=null;src='/en/img/404.jpg'" alt="cover of previous post" loading="lazy" decoding="async" srcset="/images/optimized/mafuyu8-bda54b31cbdd-480.webp 480w, /images/optimized/mafuyu8-bda54b31cbdd-960.webp 960w, /images/optimized/mafuyu8-bda54b31cbdd-1920.webp 1920w" sizes="300px" width="2520" height="1440"><div class="info"><div class="info-1"><div class="info-item-1">Previous</div><div class="info-item-2">Network Models: Preferential Attachment, BA, and Erdős–Rényi</div></div><div class="info-2"><div class="info-item-1">Derive the Barabási–Albert degree distribution through continuum and master equations, then compare preferential attachment with Erdős–Rényi networks.</div></div></div></a><a class="pagination-related" href="/en/post/nanostructures.html" title="Physics of Nanostructures"><img class="cover" src="/images/optimized/mafuyu6-0a533e25d21e-480.webp" onerror="onerror=null;src='/en/img/404.jpg'" alt="cover of next post" loading="lazy" decoding="async" srcset="/images/optimized/mafuyu6-0a533e25d21e-480.webp 480w, /images/optimized/mafuyu6-0a533e25d21e-960.webp 960w, /images/optimized/mafuyu6-0a533e25d21e-1920.webp 1920w" sizes="300px" width="2520" height="1440"><div class="info text-right"><div class="info-1"><div class="info-item-1">Next</div><div class="info-item-2">Physics of Nanostructures</div></div><div class="info-2"><div class="info-item-1">Quantum confinement, surfaces, nanofabrication, characterization, low-dimensional transport, 2D materials, nanowires, plasmonics and spintronics.</div></div></div></a></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><a class="pagination-related" href="/en/post/modelling_nonequilibrium.html" title="Atomistic modelling of electronic materials under nonequilibrium conditions"><img class="cover" src="/images/optimized/ena7-5f66d29701a6-480.webp" alt="cover" loading="lazy" decoding="async" srcset="/images/optimized/ena7-5f66d29701a6-480.webp 480w, /images/optimized/ena7-5f66d29701a6-960.webp 960w, /images/optimized/ena7-5f66d29701a6-1920.webp 1920w" sizes="300px" width="2520" height="1440"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-13</div><div class="info-item-2">Atomistic modelling of electronic materials under nonequilibrium conditions</div></div><div class="info-2"><div class="info-item-1">Lectures 1–6: nonequilibrium phenomena, DFT and Kohn–Sham theory, periodic systems, molecular dynamics, thermal catalysis and the nudged elastic band method.</div></div></div></a><a class="pagination-related" href="/en/post/system_model-clt.html" title="Central Limit Theorem: MGFs, Proof, and Random Walks"><img class="cover" src="/images/optimized/mafuyu8-bda54b31cbdd-480.webp" alt="cover" loading="lazy" decoding="async" srcset="/images/optimized/mafuyu8-bda54b31cbdd-480.webp 480w, /images/optimized/mafuyu8-bda54b31cbdd-960.webp 960w, /images/optimized/mafuyu8-bda54b31cbdd-1920.webp 1920w" sizes="300px" width="2520" height="1440"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-11</div><div class="info-item-2">Central Limit Theorem: MGFs, Proof, and Random Walks</div></div><div class="info-2"><div class="info-item-1">The central limit theorem, its assumptions and MGF proof, with normal approximations, random walks, and moment calculations.</div></div></div></a><a class="pagination-related" href="/en/post/system_model-network-basics.html" title="Network Basics: Graphs, Matrices, Projections, and Connectivity"><img class="cover" src="/images/optimized/mafuyu8-bda54b31cbdd-480.webp" alt="cover" loading="lazy" decoding="async" srcset="/images/optimized/mafuyu8-bda54b31cbdd-480.webp 480w, /images/optimized/mafuyu8-bda54b31cbdd-960.webp 960w, /images/optimized/mafuyu8-bda54b31cbdd-1920.webp 1920w" sizes="300px" width="2520" height="1440"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-11</div><div class="info-item-2">Network Basics: Graphs, Matrices, Projections, and Connectivity</div></div><div class="info-2"><div class="info-item-1">Graph types, adjacency matrices, bipartite projections, directed components, degrees and two-step neighbors, with worked network examples.</div></div></div></a><a class="pagination-related" href="/en/post/system_model-helpsheet.html" title="Complex Systems Helpsheet: Probability and Network Formulas"><img class="cover" src="/images/optimized/mafuyu8-bda54b31cbdd-480.webp" alt="cover" loading="lazy" decoding="async" srcset="/images/optimized/mafuyu8-bda54b31cbdd-480.webp 480w, /images/optimized/mafuyu8-bda54b31cbdd-960.webp 960w, /images/optimized/mafuyu8-bda54b31cbdd-1920.webp 1920w" sizes="300px" width="2520" height="1440"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-11</div><div class="info-item-2">Complex Systems Helpsheet: Probability and Network Formulas</div></div><div class="info-2"><div class="info-item-1">A formula sheet covering the CLT, stable distributions, power laws, BA and ER networks, graph matrices, connectivity, and network metrics.</div></div></div></a><a class="pagination-related" href="/en/post/system_model-network-metrics.html" title="Network Metrics: Centrality, PageRank, Clustering, and Communities"><img class="cover" src="/images/optimized/mafuyu8-bda54b31cbdd-480.webp" alt="cover" loading="lazy" decoding="async" srcset="/images/optimized/mafuyu8-bda54b31cbdd-480.webp 480w, /images/optimized/mafuyu8-bda54b31cbdd-960.webp 960w, /images/optimized/mafuyu8-bda54b31cbdd-1920.webp 1920w" sizes="300px" width="2520" height="1440"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-11</div><div class="info-item-2">Network Metrics: Centrality, PageRank, Clustering, and Communities</div></div><div class="info-2"><div class="info-item-1">Network distances, centrality, PageRank, cores, clustering, modularity, and BFS complexity, with conditions and a worked four-node example.</div></div></div></a><a class="pagination-related" href="/en/post/system_model-networkx.html" title="NetworkX: Graph Construction, Algorithms, and Reproducible Checks"><img class="cover" src="/images/optimized/mafuyu8-bda54b31cbdd-480.webp" alt="cover" loading="lazy" decoding="async" srcset="/images/optimized/mafuyu8-bda54b31cbdd-480.webp 480w, /images/optimized/mafuyu8-bda54b31cbdd-960.webp 960w, /images/optimized/mafuyu8-bda54b31cbdd-1920.webp 1920w" sizes="300px" width="2520" height="1440"><div class="info text-center"><div class="info-1"><div class="info-item-1"><i class="far fa-calendar-alt fa-fw"></i> 2026-08-11</div><div class="info-item-2">NetworkX: Graph Construction, Algorithms, and Reproducible Checks</div></div><div class="info-2"><div class="info-item-1">Build and inspect NetworkX graphs, manage attributes, choose algorithms with the right preconditions, and reproduce network-metric calculations.</div></div></div></a></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> Comments</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><a class="faa-parent animated-hover"><svg class="faa-tada icon" style="height:25px;width:25px;fill:currentColor;position:relative;top:2px" aria-hidden="true"><use xlink:href="#icon-mulu"></use></svg></a><span>Contents</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#introduction-why-study-complex-systems"><span class="toc-text"> Introduction: Why Study Complex Systems?</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#from-individuals-to-the-whole-where-complexity-arises"><span class="toc-text"> From Individuals to the Whole: Where Complexity Arises</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-uses-and-limits-of-reductionism"><span class="toc-text"> The Uses and Limits of Reductionism</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#modelling-tools-and-their-connections"><span class="toc-text"> Modelling Tools and Their Connections</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a-unifying-line-of-reasoning"><span class="toc-text"> A Unifying Line of Reasoning</span></a></li></ol></li></ol></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div id="ft"><div class="ft-item-1"><div class="t-top"><div class="t-t-l"><p class="ft-t t-l-t">Lyrics🧬</p><div class="bg-ad"><div>はじまりは胸の中で ほくほく温かいまま<br/>ひたすらに 真っ直ぐに 信じて進んでゆくんだ<br/>夢に近づくたび また新しい夢が生まれて<br/>まばゆく 染まるよ グラデーション<br/>世界一の色になる</div><div class="btn-xz-box"><a class="btn-xz" target="_blank" rel="noopener" href="https://music.163.com/#/song?id=1484620894">ゆめゆめグラデーション · Pastel＊Palettes</a></div></div></div><div class="t-t-r"><p class="ft-t t-l-t">Explore💡</p><ul class="ft-links"><li><a href="/en/link/">Friends</a><a href="/en/post/welcome.html">Welcome</a></li><li><a href="/en/about/">About</a><a href="/en/archives/">Archives</a></li><li><a href="/en/categories/">Categories</a><a href="/en/tags/">Tags</a></li></ul></div></div></div><div class="ft-item-2"><p class="ft-t">Featured links⌛</p><div class="ft-img-group"><div class="img-group-item"><a href="/en/" title="Space available"><img src="/images/boji.png" alt="Aya's Blog home" loading="lazy" decoding="async"></a></div></div></div></div><div class="copyright"><span><b>&copy;2023 - 2026</b></span><span><b>&nbsp;&nbsp;By Aya Uehara</b></span></div><div class="footer_custom_text"><a target="_blank" rel="noopener" href="https://space.bilibili.com/20518032" title="Bilibili --> 上原彩 ">Bilibili Channel</a></div><div class="site-age" id="site-age"></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Reading Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Toggle Between Light and Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle Between Single-column and Double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="Settings"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table of Contents"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="Scroll to Comments"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="Back to Top"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="Go to bottom" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div><script src="/en/js/utils.js"></script><script src="/en/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><div class="js-pjax"><script>(() => {
+  const isShuoshuo = GLOBAL_CONFIG_SITE.isShuoshuo
+  const option = {"lang":"en"}
+
+  const initValine = (el, path) => {
+    if (isShuoshuo) {
+      window.shuoshuoComment.destroyValine = () => {
+        if (el.children.length) {
+          el.innerHTML = ''
+          el.classList.add('no-comment')
+        }
+      }
+    }
+
+    const valineConfig = {
+      el: '#vcomment',
+      appId: 'MgOzoL7zXclBLrYIDngVOmhW-gzGzoHsz',
+      appKey: 'vHNjf9ACfV8sX9xfksh9WFgq',
+      avatar: 'hide',
+      serverURLs: '',
+      emojiMaps: "",
+      visitor: false,
+      ...option,
+      path: isShuoshuo ? path : (option && option.path) || window.location.pathname.replace(/^\/en(?=\/|$)/, '') || '/'
+    }
+
+    new Valine(valineConfig)
+  }
+
+  const loadValine = async (el, path) => {
+    if (typeof Valine === 'function') {
+      initValine(el, path)
+    } else {
+      await btf.getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine(el, path)
+    }
+  }
+
+  if (isShuoshuo) {
+    'Valine' === 'Valine'
+      ? window.shuoshuoComment = { loadComment: loadValine }
+      : window.loadOtherComment = loadValine
+    return
+  }
+
+  if ('Valine' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script defer src="/js/copy.js?v=20261101-i18n"></script><script defer src="/js/navigation-icons.js?v=20260912"></script><script defer src="/js/title.js?v=20261101-i18n"></script><script defer src="/js/language.js?v=20261101"></script></div><div class="js-pjax" id="home-effects"></div><script defer src="/en/js/runtime.js?v=20261101-i18n"></script><!-- hexo injector body_end start --><script async src="//at.alicdn.com/t/c/font_4773363_w1t7s6f6lj.js"></script><!-- hexo injector body_end end --></body></html>
