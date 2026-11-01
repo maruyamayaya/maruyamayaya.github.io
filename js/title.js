@@ -1,17 +1,45 @@
-//动态标题
-var OriginTitile = document.title;
-var titleTime;
-document.addEventListener('visibilitychange', function () {
-  if (document.hidden) {
-    //离开当前页面时标签显示内容
-    document.title = '👀跑哪里去了~';
-    clearTimeout(titleTime);
-  } else {
-    //返回当前页面时标签显示内容
-    document.title = '(*´∀ ˋ*) 抓到你啦～';
-    //两秒后变回正常标题
-    titleTime = setTimeout(function () {
-      document.title = OriginTitile;
-    }, 2000);
+(() => {
+  const awayTitle = '👀跑哪里去了~';
+  const returnTitle = '(*´∀ ˋ*) 抓到你啦～';
+  let originalTitle = document.title;
+  let restoreTimer = null;
+  let hasBeenVisible = !document.hidden;
+  let showingHint = false;
+
+  function clearRestoreTimer() {
+    if (restoreTimer !== null) {
+      clearTimeout(restoreTimer);
+      restoreTimer = null;
+    }
   }
-});
+
+  document.addEventListener('visibilitychange', () => {
+    clearRestoreTimer();
+    if (document.hidden) {
+      // Keep the real title when a page is first opened in the background.
+      if (!hasBeenVisible) return;
+      if (!showingHint) originalTitle = document.title;
+      showingHint = true;
+      document.title = awayTitle;
+    } else if (showingHint) {
+      document.title = returnTitle;
+      restoreTimer = setTimeout(() => {
+        restoreTimer = null;
+        if (!document.hidden) {
+          document.title = originalTitle;
+          showingHint = false;
+        }
+      }, 2000);
+    } else {
+      hasBeenVisible = true;
+      originalTitle = document.title;
+    }
+  });
+
+  // Do not retain a transient greeting in a back/forward-cache snapshot.
+  window.addEventListener('pagehide', () => {
+    clearRestoreTimer();
+    if (showingHint) document.title = originalTitle;
+    showingHint = false;
+  });
+})();

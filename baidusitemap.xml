@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://mizukioyasumi.com/bangumis/</loc>
+    
+    <lastmod>2026-11-01</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mizukioyasumi.com/about/</loc>
     
     <lastmod>2026-10-26</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>https://mizukioyasumi.com/post/power-method.html</loc>
-    
-    <lastmod>2026-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/bangumis/</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -47,25 +47,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/system_model-helpsheet.html</loc>
-    
-    <lastmod>2026-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://mizukioyasumi.com/post/system_model-network-basics.html</loc>
-    
-    <lastmod>2026-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/post/system_model-network-metrics.html</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -83,7 +65,16 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/system_model-scale-free-distributions.html</loc>
+    <loc>https://mizukioyasumi.com/post/system_model-helpsheet.html</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizukioyasumi.com/post/system_model-network-metrics.html</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -93,6 +84,15 @@
   
   <url>
     <loc>https://mizukioyasumi.com/post/system_model-networkx.html</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizukioyasumi.com/post/system_model-scale-free-distributions.html</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -274,7 +274,7 @@
 
   <url>
     <loc>https://mizukioyasumi.com/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
