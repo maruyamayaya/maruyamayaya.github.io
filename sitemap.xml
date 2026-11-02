@@ -47,7 +47,25 @@
   </url>
   
   <url>
+    <loc>https://mizukioyasumi.com/post/system_model-clt.html</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://mizukioyasumi.com/post/system_model-helpsheet.html</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://mizukioyasumi.com/post/system_model-network-basics.html</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -74,25 +92,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/system_model-network-basics.html</loc>
-    
-    <lastmod>2026-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/post/system_model-clt.html</loc>
-    
-    <lastmod>2026-10-26</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://mizukioyasumi.com/post/system_model.html</loc>
+    <loc>https://mizukioyasumi.com/post/system_model-scale-free-distributions.html</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/system_model-scale-free-distributions.html</loc>
+    <loc>https://mizukioyasumi.com/post/system_model.html</loc>
     
     <lastmod>2026-10-26</lastmod>
     
@@ -182,7 +182,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/retong1.html</loc>
+    <loc>https://mizukioyasumi.com/post/reli-exercise.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -191,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/reli-exercise.html</loc>
+    <loc>https://mizukioyasumi.com/post/retong1.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/firstblog.html</loc>
+    <loc>https://mizukioyasumi.com/post/associated-laguerre.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://mizukioyasumi.com/post/associated-laguerre.html</loc>
+    <loc>https://mizukioyasumi.com/post/firstblog.html</loc>
     
     <lastmod>2026-09-07</lastmod>
     
