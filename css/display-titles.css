@@ -1,0 +1,62 @@
+/* Local, small display faces for the illustration headers only. */
+@font-face {
+  font-family: 'Aya Title Han';
+  src: url('/fonts/display/aya-wenkai-titles.woff2?v=20261103') format('woff2');
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Cormorant Title';
+  src: url('/fonts/display/cormorant-garamond-semibold-italic-latin.woff2') format('woff2');
+  font-style: italic;
+  font-weight: 600;
+  font-display: swap;
+}
+#page-header #page-site-info {
+  top: 64px;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 10px 24px;
+}
+#page-header #site-title {
+  max-width: min(1000px, calc(100% - 48px));
+  margin-inline: auto;
+  font-synthesis: none;
+  line-height: 1.25;
+  text-wrap: balance;
+  text-shadow: 0 2px 12px rgb(15 12 25 / 45%);
+}
+#page-header #site-title.display-title-cjk {
+  font-family: 'Aya Title Han', 'Kaiti SC', 'STKaiti', 'Songti SC', serif;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: .12em;
+  padding-left: .12em;
+}
+#page-header #site-title.display-title-latin {
+  font-family: 'Cormorant Title', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: .015em;
+}
+#page-header.full_page #site-title.display-title-latin {
+  letter-spacing: -.015em;
+}
+#page-header #site-title::after {
+  content: '';
+  display: block;
+  width: 42px;
+  height: 1px;
+  margin: 18px auto 0;
+  background: linear-gradient(90deg, transparent, #efd2df 35% 65%, transparent);
+}
+#page-header.full_page #site-title::after { margin-top: 13px; margin-bottom: 14px; }
+#page-header #site-subtitle { letter-spacing: .09em; }
+@media (max-width: 600px) {
+  #page-header #site-title { max-width: calc(100% - 36px); }
+  #page-header #site-title.display-title-cjk { letter-spacing: .08em; padding-left: .08em; }
+  #page-header #site-title::after { width: 32px; margin-top: 13px; }
+}
