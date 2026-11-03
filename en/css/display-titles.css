@@ -53,8 +53,16 @@
   margin: 18px auto 0;
   background: linear-gradient(90deg, transparent, #efd2df 35% 65%, transparent);
 }
-#page-header.full_page #site-title::after { margin-top: 13px; margin-bottom: 14px; }
-#page-header #site-subtitle { letter-spacing: .09em; }
+#page-header.full_page #site-title::after { margin-top: 10px; margin-bottom: 8px; }
+#page-header.full_page #site-subtitle {
+  font-family: 'Hiragino Mincho ProN', 'Yu Mincho', YuMincho, 'Noto Serif JP', 'Noto Serif CJK JP', 'Source Han Serif JP', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-synthesis: none;
+  line-height: 1.4;
+  letter-spacing: .02em;
+  text-shadow: 0 1px 8px rgb(15 12 25 / 35%);
+}
 @media (max-width: 600px) {
   #page-header #site-title { max-width: calc(100% - 36px); }
   #page-header #site-title.display-title-cjk { letter-spacing: .08em; padding-left: .08em; }

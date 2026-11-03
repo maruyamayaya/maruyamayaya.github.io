@@ -73,8 +73,10 @@
   -webkit-line-clamp: 3;
 }
 #recent-posts > .recent-post-item .post_cover img,
-#aside-content .avatar-img img,
-#aside-content .card-info-social-icons i { transform: none !important; }
+#aside-content .avatar-img img { transform: none !important; }
+/* Use the same faa-tada motion for SVG and Font Awesome social icons. */
+#aside-content .card-info .card-info-social-icons i { transition: color .2s; }
+#aside-content .card-info .card-info-social-icons i:hover { transform: none; }
 #aside-content .card-info::before { display: none; }
 #aside-content .card-info .avatar-img:hover { opacity: 1; }
 #aside-content #card-info-btn {
