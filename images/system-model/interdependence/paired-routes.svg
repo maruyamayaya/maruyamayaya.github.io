@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="382" viewBox="0 0 680 382" role="img" aria-labelledby="t d">
+  <title id="t">A loss of connectivity can pass back and forth between two networks</title>
+  <desc id="d">Four numbered power nodes depend on four matching control nodes. The power core connects directly to 1, 2 and 4, with 3 reached via 2. The control core connects directly to 1 and 3, with 2 reached via 1 and 4 via 3. Dashed vertical lines join dependent pairs. Losing power node 1 ultimately cuts every numbered pair off from at least one core.</desc>
+  <rect width="680" height="382" rx="14" fill="#fafaf6"/>
+  <g font-family="Arial,Helvetica,sans-serif" fill="#152a39">
+  <text x="26" y="37" font-size="22" font-weight="bold">Routes within layers; requirements between them</text>
+  <text x="24" y="117" font-size="17" font-weight="bold">Power</text><text x="24" y="138" font-size="16">layer A</text>
+  <text x="24" y="243" font-size="17" font-weight="bold">Control</text><text x="24" y="264" font-size="16">layer B</text>
+  <g stroke="#29495e" stroke-width="4" fill="none"><path d="M180 74 V127 M312 74 V127 H444 M576 74 V127"/><path d="M180 301 V245 H312 M444 301 V245 H576"/></g>
+  <g stroke="#8394a0" stroke-width="3" stroke-dasharray="6 6"><path d="M180 146 V225 M312 146 V225 M444 146 V225 M576 146 V225"/></g>
+  <rect x="150" y="60" width="456" height="30" rx="6" fill="#355570"/><rect x="150" y="286" width="456" height="30" rx="6" fill="#23695e"/>
+  <g font-size="16" text-anchor="middle" fill="#fff"><text x="378" y="81">Intact power backbone</text><text x="378" y="307">Intact control backbone</text></g>
+  <g fill="#e0edf5" stroke="#345c76" stroke-width="2.5"><circle cx="180" cy="127" r="20" fill="#fff1e3" stroke="#ae4117" stroke-width="4"/><circle cx="312" cy="127" r="20"/><circle cx="444" cy="127" r="20"/><circle cx="576" cy="127" r="20"/></g>
+  <g fill="#dff1e9" stroke="#276759" stroke-width="2.5"><circle cx="180" cy="245" r="20"/><circle cx="312" cy="245" r="20"/><circle cx="444" cy="245" r="20"/><circle cx="576" cy="245" r="20"/></g>
+  <g font-size="19" font-weight="bold" text-anchor="middle"><text x="180" y="134">1</text><text x="312" y="134">2</text><text x="444" y="134">3</text><text x="576" y="134">4</text><text x="180" y="252">1</text><text x="312" y="252">2</text><text x="444" y="252">3</text><text x="576" y="252">4</text></g>
+  <g font-size="15"><circle cx="39" cy="350" r="7" fill="#fff1e3" stroke="#ae4117" stroke-width="3"/><text x="55" y="356">Initial failure</text><path d="M198 350 H236" stroke="#29495e" stroke-width="4"/><text x="245" y="356">Connection</text><path d="M388 350 H425" stroke="#8394a0" stroke-width="3" stroke-dasharray="6 6"/><text x="434" y="356">Mutual dependency</text></g>
+  </g></svg>

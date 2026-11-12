@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 308" role="img" aria-labelledby="title desc">
+  <title id="title">Two steps from a vertex in a locally tree-like network</title>
+  <desc id="desc">The root has three neighbors. One is a leaf; each of the others has two unused edges. There are three first neighbors and four second neighbors.</desc>
+  <rect width="680" height="308" rx="12" fill="#f6f8fa"/>
+  <g font-family="system-ui, sans-serif" fill="#203c4c" font-size="17" text-anchor="middle">
+    <text x="94" y="32" font-weight="600">Root</text>
+    <text x="319" y="32" font-weight="600">First neighbors</text>
+    <text x="565" y="32" font-weight="600">Second neighbors</text>
+  </g>
+  <g stroke-linecap="round" stroke-width="3.5" fill="none">
+    <g stroke="#496775">
+      <path d="M94 156 L319 72 M94 156 L319 238"/>
+    </g>
+    <path d="M94 156 L319 156" stroke="#a95122"/>
+    <path d="M319 156 L565 114 M319 156 L565 168" stroke="#087f83"/>
+    <path d="M319 238 L565 219 M319 238 L565 271" stroke="#496775"/>
+  </g>
+  <g stroke-width="3">
+    <circle cx="94" cy="156" r="11" fill="#203c4c" stroke="#203c4c"/>
+    <g fill="white" stroke="#496775">
+      <circle cx="319" cy="72" r="9"/>
+      <circle cx="319" cy="238" r="9"/>
+      <circle cx="565" cy="219" r="8"/>
+      <circle cx="565" cy="271" r="8"/>
+    </g>
+    <circle cx="319" cy="156" r="10" fill="#087f83" stroke="#087f83"/>
+    <g fill="white" stroke="#087f83">
+      <circle cx="565" cy="114" r="8"/>
+      <circle cx="565" cy="168" r="8"/>
+    </g>
+  </g>
+  <g font-family="system-ui, sans-serif" font-size="15">
+    <text x="342" y="77" fill="#496775">leaf: no way forward</text>
+    <text x="133" y="151" fill="#93421b">edge used to arrive</text>
+    <text x="420" y="113" fill="#006a6e">two ways forward</text>
+  </g>
+</svg>
