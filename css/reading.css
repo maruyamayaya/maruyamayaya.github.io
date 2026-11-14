@@ -74,6 +74,19 @@
 }
 #recent-posts > .recent-post-item .post_cover img,
 #aside-content .avatar-img img { transform: none !important; }
+#aside-content .card-info .card-info-social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#aside-content .card-info .card-info-social-icons > .social-icon {
+  display: flex;
+  flex: 0 1 2.25em;
+  align-items: center;
+  justify-content: center;
+  min-height: 2em;
+  margin: 0;
+}
 /* Use the same faa-tada motion for SVG and Font Awesome social icons. */
 #aside-content .card-info .card-info-social-icons i { transition: color .2s; }
 #aside-content .card-info .card-info-social-icons i:hover { transform: none; }
